@@ -7,9 +7,9 @@
 	<ContentPage.Content >
 		<ContentView BackgroundColor="#B3E770">
 			<StackLayout x:Name="MainMenu" Padding="10" HorizontalOptions="Center" VerticalOptions="Center" >
-				<Button x:Name="ExploreBtn" Text="Explore Poems" TextColor="Black"/>
-				<Button x:Name="CreateBtn" Text="Create New Poem" TextColor="Black"/>
-				<Button x:Name="EditBtn" Text="Edit Poems" TextColor="Black"/>
+				<Button x:Name="ExploreBtn" Text="Explore Poems" TextColor="#5A8622"/>
+				<Button x:Name="CreateBtn" Text="Create New Poem" TextColor="#5A8622"/>
+				<Button x:Name="EditBtn" Text="Edit Poems" TextColor="#5A8622"/>
 
 			</StackLayout>
 		</ContentView>
