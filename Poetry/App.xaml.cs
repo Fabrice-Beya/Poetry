@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Poetry
 {
 	public partial class App : Application
 	{
+		public new static App Current
+		{
+			get
+			{
+				return (App)Application.Current;
+			}
+		}
+
 		public App()
 		{
 			MainPage = new NavigationPage(new HomePage());

@@ -1,5 +1,17 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Poetry.HomePage">
-	<ContentPage.Content>
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Poetry.HomePage"
+		Title="Home">
+	
+	<ContentPage.Content >
+		<ContentView BackgroundColor="#B3E770">
+			<StackLayout x:Name="MainMenu" Padding="10" HorizontalOptions="Center" VerticalOptions="Center" >
+				<Button x:Name="ExploreBtn" Text="Explore Poems" TextColor="Black"/>
+				<Button x:Name="CreateBtn" Text="Create New Poem" TextColor="Black"/>
+				<Button x:Name="EditBtn" Text="Edit Poems" TextColor="Black"/>
+
+			</StackLayout>
+		</ContentView>
 	</ContentPage.Content>
 </ContentPage>
