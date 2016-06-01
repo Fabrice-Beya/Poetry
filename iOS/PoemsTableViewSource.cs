@@ -6,12 +6,14 @@ namespace Poetry.iOS
 {
 	public class PoemsTableViewSource:UITableViewSource
 	{
+		
 		DataSource db;
 		List<Poem> Poems;
 		public PoemsTableViewSource()
 		{
 			db = new DataSource();
 			Poems = db.GetItems();
+
 		}
 
 		public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -31,6 +33,18 @@ namespace Poetry.iOS
 		public override nint RowsInSection(UITableView tableview, nint section)
 		{
 			return Poems.Count;
+		}
+
+		public override void RowSelected(UITableView tableView, Foundation.NSIndexPath indexPath)
+		{
+			
+			tableView.DeselectRow(indexPath, true);
+
+		}
+
+		public Poem GetPoem(int index)
+		{
+			return Poems[index];
 		}
 	}
 }

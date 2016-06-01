@@ -11,6 +11,7 @@ namespace Poetry
 		public string Content { get; set; }
 		public string ImageUrl { get; set; }
 		public string Font { get; set; }
+		public DateTime DateCreated { get; set; }
 	}
 }
 
