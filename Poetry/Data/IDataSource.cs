@@ -4,7 +4,7 @@ namespace Poetry
 {
 	public interface IDataSource
 	{
-		List<Poem> GetItems<Poem>();
+		List<Poem> GetItems();
 		int SaveItem(Poem item);
 	}
 }

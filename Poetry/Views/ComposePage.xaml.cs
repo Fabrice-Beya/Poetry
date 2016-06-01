@@ -19,7 +19,10 @@ namespace Poetry
 		{
 			base.OnAppearing();
 			Save.Clicked += (sender, e) => {
-			
+				ViewModel.db.SaveItem(new Poem() { 
+				Title = this.Title,
+					Content = Poem.Text
+				});
 			};
 		}
 	}

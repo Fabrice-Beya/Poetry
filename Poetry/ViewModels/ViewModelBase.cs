@@ -6,7 +6,7 @@ namespace Poetry
 {
 	public class ViewModelBase : BaseViewModel
 	{
-		protected readonly IDataSource db;
+		internal readonly IDataSource db;
 
 		public ViewModelBase()
 		{
