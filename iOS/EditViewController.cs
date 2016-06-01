@@ -9,5 +9,11 @@ namespace Poetry.iOS
         public EditViewController (IntPtr handle) : base (handle)
         {
         }
+
+		public override void ViewDidLoad()
+		{
+			PoemsTableView.Source = new PoemsTableViewSource();
+			base.ViewDidLoad();
+		}
     }
 }

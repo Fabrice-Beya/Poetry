@@ -18,11 +18,20 @@ namespace Poetry.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView EditView { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView PoemsTableView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (EditView != null) {
                 EditView.Dispose ();
                 EditView = null;
+            }
+
+            if (PoemsTableView != null) {
+                PoemsTableView.Dispose ();
+                PoemsTableView = null;
             }
         }
     }
