@@ -8,12 +8,14 @@ namespace Poetry.iOS
     {
         public MainNavigationController (IntPtr handle) : base (handle)
         {
+			
         }
 
 		public override void ViewDidLoad()
 		{
+			
 			base.ViewDidLoad();
-			this.NavigationBar.Hidden = true;
+
 		}
     }
 }

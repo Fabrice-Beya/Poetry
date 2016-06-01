@@ -14,8 +14,16 @@ namespace Poetry.iOS
     [Register ("MainNavigationController")]
     partial class MainNavigationController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UINavigationBar MainNavigationBar { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (MainNavigationBar != null) {
+                MainNavigationBar.Dispose ();
+                MainNavigationBar = null;
+            }
         }
     }
 }
