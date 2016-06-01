@@ -12,6 +12,9 @@ namespace Poetry.iOS
 	{
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
+
+			PoetryDataSource.Root = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+
 			global::Xamarin.Forms.Forms.Init();
 
 			LoadApplication(new App());

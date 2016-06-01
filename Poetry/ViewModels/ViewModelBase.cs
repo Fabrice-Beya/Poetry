@@ -6,11 +6,11 @@ namespace Poetry
 {
 	public class ViewModelBase : BaseViewModel
 	{
-		internal readonly IDataSource db;
+		internal readonly PoetryDataSource db;
 
 		public ViewModelBase()
 		{
-			db = DependencyService.Get<IDataSource>();
+			db = new PoetryDataSource();//DependencyService.Get<IDataSource>();
 		}
 	}
 }

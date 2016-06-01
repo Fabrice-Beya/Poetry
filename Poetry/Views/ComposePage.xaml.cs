@@ -8,7 +8,7 @@ namespace Poetry
 	public partial class ComposePage : ContentPage
 	{
 		ComposeViewModel ViewModel;
-		Poem NewPoem;
+
 		public ComposePage()
 		{
 			InitializeComponent();
@@ -20,7 +20,7 @@ namespace Poetry
 			base.OnAppearing();
 			Save.Clicked += (sender, e) => {
 				ViewModel.db.SaveItem(new Poem() { 
-				Title = this.Title,
+				Title = PTitle.Text,
 					Content = Poem.Text
 				});
 			};

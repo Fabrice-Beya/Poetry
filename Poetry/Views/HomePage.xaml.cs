@@ -24,6 +24,10 @@ namespace Poetry
 			{
 				this.Navigation.PushAsync(new ComposePage());
 			};
+			EditBtn.Clicked += (sender, e) =>
+			{
+				this.Navigation.PushAsync(new EditPage());
+			};
 		}
 	}
 }

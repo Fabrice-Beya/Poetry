@@ -8,12 +8,13 @@
 					FontSize="30"
 					TextColor="White"
 					FontFamily="Baskerville-BoldItalic"
+						HeightRequest="40"
 					/>
 				<Editor x:Name="Poem" Text="Poem" 
 						WidthRequest="300" HeightRequest="550" 
 						BackgroundColor="Transparent" 
 						Keyboard="Text" 
-						FontSize="Large"
+						FontSize="Medium"
 						TextColor="#2C7797"
 						FontFamily="Baskerville-BoldItalic"
 					/>

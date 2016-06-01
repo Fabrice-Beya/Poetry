@@ -14,7 +14,7 @@ namespace Poetry
 	{
 		public SQLiteConnection Connection { get; }
 
-		public static string Root { get; }
+		public static string Root { get; set;}
 
 		const string filename = "poem.db3";
 
