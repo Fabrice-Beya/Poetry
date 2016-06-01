@@ -19,6 +19,11 @@ namespace Poetry
 			NavigationPage.SetHasNavigationBar(this, false);
 			//BackgroundColor = (Color)App.Current.Resources["greenPrimary"];
 			Title = "Home";
+
+			CreateBtn.Clicked += (sender, e) =>
+			{
+				this.Navigation.PushAsync(new ComposePage());
+			};
 		}
 	}
 }

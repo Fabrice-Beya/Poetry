@@ -10,6 +10,13 @@ namespace Poetry
 		public ComposePage()
 		{
 			InitializeComponent();
+			 
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
 		}
 	}
 }
