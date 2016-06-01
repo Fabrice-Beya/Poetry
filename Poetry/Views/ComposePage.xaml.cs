@@ -13,6 +13,16 @@ namespace Poetry
 		{
 			InitializeComponent();
 			BindingContext = ViewModel = new ComposeViewModel();
+
+			 ToolbarItems.Add(new ToolbarItem
+			 {
+				 StyleId = "Settings",
+				 Icon = "ic_action_settings.png",
+				 Text = "Settings",
+				 Order = ToolbarItemOrder.Primary,
+				 //Command = viewModel.GoToAboutCommand
+			 });
+
 		}
 
 		protected override void OnAppearing()
