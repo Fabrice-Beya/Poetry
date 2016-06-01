@@ -12,7 +12,7 @@ namespace Poetry
 
 		public static string Root { get; set; }
 
-		const string filename = "db.db3";
+		const string filename = "sqlite3";
 
 		public DataSource()
 		{
