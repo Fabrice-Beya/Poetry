@@ -17,7 +17,7 @@ namespace Poetry
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			Title = "Count : " + ViewModel.PoemList.Count.ToString();
+			Title = "Peotry Collection";
 		}
 	}
 }
