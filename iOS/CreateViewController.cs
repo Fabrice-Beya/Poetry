@@ -17,16 +17,20 @@ namespace Poetry.iOS
 
 			
 			base.ViewDidLoad();
+			var tap = new UITapGestureRecognizer();
+			tap.AddTarget(() => View.EndEditing(true));
+			View.AddGestureRecognizer(tap);
+			tap.CancelsTouchesInView = false;
 
 			if (SelectedPoem != null)
 			{
 				PTitle.Text = SelectedPoem.Title;
 				PContent.Text = SelectedPoem.Content;
-				PDate.Text = SelectedPoem.DateCreated.ToShortDateString();
+				PDate.Text = "Created: " +SelectedPoem.DateCreated.ToShortDateString();
 				Author.Text = SelectedPoem.Author;
 			}
 
-			this.PDate.Text = DateTime.UtcNow.ToShortDateString();
+			this.PDate.Text = "Created: " + DateTime.UtcNow.ToShortDateString();
 
 			Save.TouchUpInside += (sender, e) =>
 			{
