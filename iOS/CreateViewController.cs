@@ -22,11 +22,11 @@ namespace Poetry.iOS
 			{
 				PTitle.Text = SelectedPoem.Title;
 				PContent.Text = SelectedPoem.Content;
-				PDate.Text = SelectedPoem.DateCreated.ToString();
+				PDate.Text = SelectedPoem.DateCreated.ToShortDateString();
 				Author.Text = SelectedPoem.Author;
 			}
 
-			this.PDate.Text += DateTime.UtcNow.ToString();
+			this.PDate.Text = DateTime.UtcNow.ToShortDateString();
 
 			Save.TouchUpInside += (sender, e) =>
 			{
