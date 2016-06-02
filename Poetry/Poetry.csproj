@@ -36,10 +36,12 @@
     <Compile Include="Model\Poem.cs" />
     <Compile Include="Data\DataSource.cs" />
     <Compile Include="Data\IDataSource.cs" />
+    <Compile Include="Service\PoetryService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Data\" />
+    <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLite-net">
