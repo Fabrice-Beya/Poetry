@@ -24,6 +24,10 @@ namespace Poetry.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LengthRecording { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView PContent { get; set; }
 
         [Outlet]
@@ -32,11 +36,27 @@ namespace Poetry.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Play { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField PTitle { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Record { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton Save { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Status { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton StopRecording { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -50,6 +70,11 @@ namespace Poetry.iOS
                 CreateView = null;
             }
 
+            if (LengthRecording != null) {
+                LengthRecording.Dispose ();
+                LengthRecording = null;
+            }
+
             if (PContent != null) {
                 PContent.Dispose ();
                 PContent = null;
@@ -60,14 +85,34 @@ namespace Poetry.iOS
                 PDate = null;
             }
 
+            if (Play != null) {
+                Play.Dispose ();
+                Play = null;
+            }
+
             if (PTitle != null) {
                 PTitle.Dispose ();
                 PTitle = null;
             }
 
+            if (Record != null) {
+                Record.Dispose ();
+                Record = null;
+            }
+
             if (Save != null) {
                 Save.Dispose ();
                 Save = null;
+            }
+
+            if (Status != null) {
+                Status.Dispose ();
+                Status = null;
+            }
+
+            if (StopRecording != null) {
+                StopRecording.Dispose ();
+                StopRecording = null;
             }
         }
     }

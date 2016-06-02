@@ -7,9 +7,11 @@ namespace Poetry.iOS
     public partial class CreateViewController : UIViewController
     {
 		DataSource db;
+		Recorder recorder;
 		public Poem SelectedPoem { get; set; }
         public CreateViewController (IntPtr handle) : base (handle)
         {
+			recorder = new Recorder();
 			db = new DataSource();
         }
 		public override void ViewDidLoad()
@@ -17,6 +19,25 @@ namespace Poetry.iOS
 
 			
 			base.ViewDidLoad();
+
+			Status.Text = recorder.Status;
+
+			Record.TouchUpInside += (sender, e) => {
+				recorder.StartRecording();
+				Status.Text = recorder.Status;
+				LengthRecording.Text = recorder.LengthRecorded;
+			};
+			LengthRecording.Text = recorder.LengthRecorded;
+			StopRecording.TouchUpInside += (sender, e) => {
+				recorder.StopRecording();
+				Status.Text = recorder.Status;
+				LengthRecording.Text = recorder.LengthRecorded;
+			};
+
+			Play.TouchUpInside += (sender, e) => {
+				recorder.PlayRecord();
+			};
+
 			var tap = new UITapGestureRecognizer();
 			tap.AddTarget(() => View.EndEditing(true));
 			View.AddGestureRecognizer(tap);
