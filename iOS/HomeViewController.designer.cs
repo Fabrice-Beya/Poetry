@@ -30,6 +30,14 @@ namespace Poetry.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView HomeView { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView Logo { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Slogan { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (Compose != null) {
@@ -50,6 +58,16 @@ namespace Poetry.iOS
             if (HomeView != null) {
                 HomeView.Dispose ();
                 HomeView = null;
+            }
+
+            if (Logo != null) {
+                Logo.Dispose ();
+                Logo = null;
+            }
+
+            if (Slogan != null) {
+                Slogan.Dispose ();
+                Slogan = null;
             }
         }
     }

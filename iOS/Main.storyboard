@@ -42,15 +42,15 @@
                         <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.37647058823529411" green="0.75686274509803919" blue="0.32941176470588235" alpha="1"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="21" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="147" y="350" width="121" height="37"/>
+                                <rect key="frame" x="146" y="397" width="121" height="37"/>
                                 <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="30"/>
                                 <state key="normal" title="Explore">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.42352941176470588" blue="0.015686274509803921" alpha="1"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="22" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="120" y="271" width="175" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="22" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="119" y="318" width="175" height="37"/>
                                 <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="30"/>
                                 <state key="normal" title="Compose ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,7 +65,7 @@
                                 </constraints>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="23" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="79" y="425" width="257" height="37"/>
+                                <rect key="frame" x="78" y="472" width="257" height="37"/>
                                 <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="30"/>
                                 <state key="normal" title="Your Collection">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,10 +75,51 @@
                                     <segue id="4466" destination="3622" kind="show"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="5531" translatesAutoresizingMaskIntoConstraints="NO" image="Icon-60.png" misplaced="YES">
+                                <rect key="frame" x="148" y="63" width="114" height="142"/>
+                                <constraints>
+                                    <constraint id="5547" firstAttribute="width" constant="114"/>
+                                    <constraint id="5548" firstAttribute="height" constant="142"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&quot;We speak in the language of the gods&quot;" lineBreakMode="tailTruncation" minimumFontSize="10" id="5533" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
+                                <rect key="frame" x="42" y="213" width="331" height="28"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="17"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.42352941176470588" blue="0.015686274509803921" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="5552" firstAttribute="width" constant="331"/>
+                                    <constraint id="5553" firstAttribute="height" constant="28"/>
+                                </constraints>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="POETRY" lineBreakMode="tailTruncation" minimumFontSize="10" id="3" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
+                                <rect key="frame" x="124" y="669" width="166" height="53"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="24"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.42352941176470588" blue="0.015686274509803921" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <rect key="frame" x="124" y="341" width="166" height="53"/>
+                                </variation>
+                                <constraints>
+                                    <constraint id="5560" firstAttribute="width" constant="166"/>
+                                    <constraint id="5561" firstAttribute="height" constant="53"/>
+                                </constraints>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint id="4476" firstItem="15" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" constant="119"/>
                             <constraint id="4477" firstItem="22" firstAttribute="top" secondItem="15" secondAttribute="top" constant="271"/>
+                            <constraint id="5545" firstItem="5531" firstAttribute="centerX" secondItem="15" secondAttribute="centerX"/>
+                            <constraint id="5546" firstItem="5531" firstAttribute="top" secondItem="15" secondAttribute="top" constant="63"/>
+                            <constraint id="5549" firstItem="5533" firstAttribute="centerX" secondItem="5531" secondAttribute="centerX"/>
+                            <constraint id="5550" firstItem="5533" firstAttribute="centerX" secondItem="15" secondAttribute="centerX"/>
+                            <constraint id="5551" firstItem="5533" firstAttribute="top" secondItem="15" secondAttribute="top" constant="213"/>
+                            <constraint id="5562" firstItem="3" firstAttribute="centerX" secondItem="5531" secondAttribute="centerX"/>
+                            <constraint id="5563" firstItem="3" firstAttribute="centerX" secondItem="5533" secondAttribute="centerX"/>
+                            <constraint id="5564" firstItem="3" firstAttribute="centerX" secondItem="15" secondAttribute="centerX"/>
+                            <constraint id="5565" firstItem="15" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" constant="14"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main Menu" id="14"/>
@@ -87,6 +128,8 @@
                         <outlet property="Explore" destination="21" id="name-outlet-21"/>
                         <outlet property="Compose" destination="22" id="name-outlet-22"/>
                         <outlet property="Edit" destination="23" id="name-outlet-23"/>
+                        <outlet property="Logo" destination="5531" id="name-outlet-5531"/>
+                        <outlet property="Slogan" destination="5533" id="name-outlet-5533"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,22 +149,28 @@
                         <color key="backgroundColor" customColorSpace="calibratedWhite" colorSpace="calibratedRGB" red="0.37647058823529411" green="0.75686274509803919" blue="0.32941176470588235" alpha="1"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3569" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center" usesAttributedText="YES" allowsEditingTextAttributes="YES">
-                                <rect key="frame" x="20" y="110" width="374" height="446"/>
+                                <rect key="frame" x="20" y="87" width="374" height="483"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.37647058823529411" green="0.75686274509803919" blue="0.32941176470588235" alpha="1"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.42352941176470588" blue="0.015686274509803921" alpha="1"/>
                                 <attributedString key="attributedText">
                                     <fragment content="....">
                                         <attributes>
-                                            <color key="NSColor" colorSpace="calibratedRGB" red="0.047058823529411764" green="0.35686274509803922" blue="0.0196078431372549" alpha="1"/>
+                                            <color key="NSColor" colorSpace="calibratedRGB" red="0.047058823529411764" green="0.23137254901960785" blue="0" alpha="1"/>
                                             <font key="NSFont" name="Baskerville" family="Baskerville" size="23"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.047058823529411764" green="0.35686274509803922" blue="0.0196078431372549" alpha="1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <constraints>
-                                    <constraint id="5374" firstAttribute="width" constant="374"/>
-                                    <constraint id="5375" firstAttribute="height" constant="446"/>
+                                    <constraint id="5529" firstAttribute="width" constant="374"/>
+                                    <constraint id="5530" firstAttribute="height" constant="483"/>
                                 </constraints>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="3570" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center" placeholder="Title">
@@ -146,26 +195,18 @@
                                     <constraint id="5502" firstAttribute="height" constant="33"/>
                                 </constraints>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="3596" translatesAutoresizingMaskIntoConstraints="NO" placeholder="By:" text="Author:">
-                                <rect key="frame" x="116" y="110" width="182" height="35"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="3596" translatesAutoresizingMaskIntoConstraints="NO" placeholder="By:" text="Author:" fixedFrame="YES">
+                                <rect key="frame" x="17" y="102" width="182" height="35"/>
                                 <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.42352941176470588" blue="0.015686274509803921" alpha="1"/>
-                                <constraints>
-                                    <constraint id="5509" firstAttribute="width" constant="182"/>
-                                    <constraint id="5510" firstAttribute="height" constant="35"/>
-                                </constraints>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" id="3599" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="116" y="138" width="182" height="35"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" minimumFontSize="10" id="3599" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="220" y="102" width="182" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Baskerville-BoldItalic" family="Baskerville" pointSize="17"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0" green="0.42352941176470588" blue="0.015686274509803921" alpha="1"/>
                                 <nil key="highlightedColor"/>
-                                <constraints>
-                                    <constraint id="5513" firstAttribute="width" constant="182"/>
-                                    <constraint id="5514" firstAttribute="height" constant="35"/>
-                                </constraints>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5331" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="29" y="572" width="65" height="30"/>
@@ -241,8 +282,6 @@
                         <constraints>
                             <constraint id="5365" firstItem="3570" firstAttribute="top" secondItem="94" secondAttribute="top" constant="63"/>
                             <constraint id="5366" firstItem="94" firstAttribute="trailing" secondItem="3570" secondAttribute="trailing" constant="38"/>
-                            <constraint id="5372" firstItem="94" firstAttribute="trailing" secondItem="3569" secondAttribute="trailing" constant="20"/>
-                            <constraint id="5373" firstItem="3569" firstAttribute="top" secondItem="94" secondAttribute="top" constant="110"/>
                             <constraint id="5387" firstItem="94" firstAttribute="bottom" secondItem="5332" secondAttribute="bottom" constant="134"/>
                             <constraint id="5388" firstItem="94" firstAttribute="trailing" secondItem="5332" secondAttribute="trailing" constant="45"/>
                             <constraint id="5391" firstItem="94" firstAttribute="bottom" secondItem="5348" secondAttribute="bottom" constant="134"/>
@@ -257,10 +296,8 @@
                             <constraint id="5500" firstItem="94" firstAttribute="bottom" secondItem="3571" secondAttribute="bottom" constant="14"/>
                             <constraint id="5503" firstItem="94" firstAttribute="bottom" secondItem="5417" secondAttribute="bottom" constant="14"/>
                             <constraint id="5504" firstItem="94" firstAttribute="trailing" secondItem="5417" secondAttribute="trailing" constant="20"/>
-                            <constraint id="5507" firstItem="3596" firstAttribute="top" secondItem="94" secondAttribute="top" constant="110"/>
-                            <constraint id="5508" firstItem="94" firstAttribute="trailing" secondItem="3596" secondAttribute="trailing" constant="116"/>
-                            <constraint id="5511" firstItem="3599" firstAttribute="top" secondItem="94" secondAttribute="top" constant="138"/>
-                            <constraint id="5512" firstItem="94" firstAttribute="trailing" secondItem="3599" secondAttribute="trailing" constant="116"/>
+                            <constraint id="5527" firstItem="94" firstAttribute="trailing" secondItem="3569" secondAttribute="trailing" constant="20"/>
+                            <constraint id="5528" firstItem="3569" firstAttribute="top" secondItem="94" secondAttribute="top" constant="87"/>
                         </constraints>
                     </view>
                     <connections>
@@ -305,16 +342,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4491">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4491" textAlignment="center">
                                                     <rect key="frame" x="15" y="0.0" width="384" height="69"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="23"/>
+                                                    <color key="textColor" colorSpace="calibratedRGB" red="0.047058823529411764" green="0.23137254901960785" blue="0" alpha="1"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.10980392156862745" green="0.56470588235294117" blue="0.094117647058823528" alpha="1"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.37647058823529411" green="0.75686274509803919" blue="0.32941176470588235" alpha="1"/>
                                         <connections>
                                             <segue id="5320" destination="93" kind="show" identifier="EditPoemSegue"/>
                                         </connections>
