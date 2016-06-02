@@ -3,6 +3,7 @@ using UIKit;
 using System.Deployment;
 using System.IO;
 using System;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace Poetry.iOS
 {
@@ -15,6 +16,7 @@ namespace Poetry.iOS
 
 		public override UIWindow Window
 		{
+			
 			get;
 			set;
 		}
@@ -23,6 +25,7 @@ namespace Poetry.iOS
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
+			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 			DataSource.Root = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 			return true;
 		}

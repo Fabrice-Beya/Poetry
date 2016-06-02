@@ -7,12 +7,13 @@ namespace Poetry
 	public class PoetryService
 	{
 
-		public static MobileServiceClient MobileService = new MobileServiceClient("https://poe-try.azurewebsites.net");
+		public static MobileServiceClient MobileService = new MobileServiceClient("http://127.0.0.1:8080");
 
-		public List<Poem> Poems { get; set; }
+		public List<Poem> Poems;
 
 		public PoetryService()
 		{
+			
 			Poems = new List<Poem>();
 
 		}
