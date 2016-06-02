@@ -64,6 +64,17 @@ namespace Poe_tryService
                 context.Set<TodoItem>().Add(todoItem);
             }
 
+			List<Poem> Poems = new List<Poem>
+			{
+				new Poem { Id = Guid.NewGuid().ToString(), Title = "Test1 Title" },
+				new Poem { Id = Guid.NewGuid().ToString(), Title = "Test2 Title" },
+			};
+
+			foreach (Poem p in Poems)
+			{
+				context.Set<Poem>().Add(p);
+			}
+
             base.Seed(context);
         }
     }
