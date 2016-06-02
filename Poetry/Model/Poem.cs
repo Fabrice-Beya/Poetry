@@ -18,6 +18,7 @@ namespace Poetry
 		public string AudioUrl { get; set; }
 		public string Font { get; set; }
 		public DateTime DateCreated { get; set; }
+		public bool IsLiked { get; set; }
 	}
 }
 
