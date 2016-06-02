@@ -38,20 +38,29 @@ namespace Poetry.iOS
 
 			recorder.AudioFileName = string.Format("{0}-{1}.aac", PTitle.Text.Trim(), DateTime.Now.ToString("yyyy-MMMMM-dd"));
 			Status.Text = recorder.Status;
+			LengthRecording.Text = string.Format("{0:hh\\:mm\\:ss}", recorder.stopwatch.Elapsed);
 
+			//Begin recording
 			Record.TouchUpInside += (sender, e) => {
+				Record.Enabled = false;
 				recorder.StartRecording();
 				Status.Text = recorder.Status;
 				LengthRecording.Text = recorder.LengthRecorded;
 			};
-			LengthRecording.Text = recorder.LengthRecorded;
+
+
 			StopRecording.TouchUpInside += (sender, e) => {
 				recorder.StopRecording();
+				recorder.StopPlay();
 				Status.Text = recorder.Status;
 				LengthRecording.Text = recorder.LengthRecorded;
+				Record.Enabled = true;
+				Play.Enabled = true;
 			};
 
+			//Begin playback 
 			Play.TouchUpInside += (sender, e) => {
+				Play.Enabled = false;
 				if (SelectedPoem != null)
 				{
 					recorder.PlayRecord(SelectedPoem.AudioUrl);
@@ -62,6 +71,7 @@ namespace Poetry.iOS
 				}
 			};
 
+			//Remove current poem
 			Remove.TouchUpInside += (sender, e) => {
 				if (SelectedPoem != null)
 				{
@@ -70,7 +80,7 @@ namespace Poetry.iOS
 			};
 
 
-
+			//Save current poem
 			Save.TouchUpInside += (sender, e) =>
 			{
 				if (SelectedPoem != null)

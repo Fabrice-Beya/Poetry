@@ -13,16 +13,17 @@ namespace Poetry.iOS
 		AVAudioRecorder recorder;
 		AVPlayer player;
 		NSDictionary settings;
-		Stopwatch stopwatch = null;
 		NSUrl audioFilePath = null;
 		NSObject observer;
 		public string Status { get; set; }
 		public string LengthRecorded { get; set; }
 		public string AudioFileName { get; set; }
+		public Stopwatch stopwatch { get; set; }
 
 		public Recorder()
 		{
 			AudioSession.Initialize();
+			stopwatch = new Stopwatch();
 		}
 
 		public void StartRecording()
@@ -41,7 +42,7 @@ namespace Poetry.iOS
 				Status = "Recording...";
 				recorder.Record();
 			}
-			stopwatch = new Stopwatch();
+
 			stopwatch.Start();
 			LengthRecorded = string.Format("{0:hh\\:mm\\:ss}", this.stopwatch.Elapsed);
 
@@ -49,7 +50,10 @@ namespace Poetry.iOS
 		public void StopRecording()
 		{
 			Status = "Stopped Recording...";
-			this.recorder.Stop();
+			if (this.recorder != null)
+			{
+				this.recorder.Stop();
+			}
 			LengthRecorded = string.Format("{0:hh\\:mm\\:ss}", this.stopwatch.Elapsed);
 			stopwatch.Stop();
 
@@ -62,9 +66,9 @@ namespace Poetry.iOS
 
 		public void PlayRecord(string Filename)
 		{
-			
-			string tempLocation = Path.Combine(DataSource.Root, Filename);
-			NSUrl FilePath = NSUrl.FromFilename(tempLocation);
+			Status = "Playing...";
+			string Location = Path.Combine(DataSource.Root, Filename);
+			NSUrl FilePath = NSUrl.FromFilename(Location);
 
 			AudioSession.Category = AudioSessionCategory.MediaPlayback;
 
@@ -72,17 +76,20 @@ namespace Poetry.iOS
 			this.player.Play();
 		}
 
+		public void StopPlay()
+		{
+			Status = "Stopped Playing";
+			if(this.player!=null)
+				this.player.Pause();
+		}
 
 		bool PrepareAudioSession()
 		{
 			//This will initialize the audio session before trying to record
 			var audioSession = AVAudioSession.SharedInstance();
-			var err = audioSession.SetCategory(AVAudioSessionCategory.PlayAndRecord);
-			err = audioSession.SetActive(true);
 
 			//Set up the file storage settings for the audio file
-
-			string tempLocation = Path.Combine(Path.GetTempPath(), AudioFileName);
+			string tempLocation = Path.Combine(DataSource.Root, AudioFileName);
 			audioFilePath = NSUrl.FromFilename(tempLocation);
 
 			//set up the NSObject Array of values that will be combined with the keys to make the NSDictionary
@@ -121,7 +128,7 @@ namespace Poetry.iOS
 			{
 				recorder.Dispose();
 				recorder = null;
-				Console.WriteLine("Done Recording (status: {0})", e.Status);
+				Status = string.Format("Done Recording (status: {0})", e.Status);
 			};
 
 			return true;
