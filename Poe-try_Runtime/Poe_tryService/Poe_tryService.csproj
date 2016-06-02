@@ -171,6 +171,8 @@
     <Compile Include="Models\Poe_tryContext.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataObjects\Poem.cs" />
+    <Compile Include="Controllers\PoemController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />

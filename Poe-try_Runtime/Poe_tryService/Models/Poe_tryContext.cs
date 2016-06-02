@@ -23,6 +23,7 @@ namespace Poe_tryService.Models
         } 
 
         public DbSet<TodoItem> TodoItems { get; set; }
+		public DbSet<Poem> Poems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
