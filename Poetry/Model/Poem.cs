@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Reflection;
+using SQLite;
 
 namespace Poetry
 {
 	public class Poem
 	{
+		
+		[PrimaryKey,AutoIncrement]
 		public int Id { get; set; }
 		public string Author { get; set; }
 		public string Title { get; set; }

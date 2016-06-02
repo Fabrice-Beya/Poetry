@@ -48,6 +48,10 @@ namespace Poetry.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Remove { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton Save { get; set; }
 
         [Outlet]
@@ -98,6 +102,11 @@ namespace Poetry.iOS
             if (Record != null) {
                 Record.Dispose ();
                 Record = null;
+            }
+
+            if (Remove != null) {
+                Remove.Dispose ();
+                Remove = null;
             }
 
             if (Save != null) {

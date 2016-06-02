@@ -14,6 +14,7 @@ namespace Poetry.iOS
 
 		public override void ViewDidLoad()
 		{
+			PoemsTableView.ReloadData();
 			PoemsTableView.Source = source = new PoemsTableViewSource();
 			base.ViewDidLoad();
 		}

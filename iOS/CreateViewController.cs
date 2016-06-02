@@ -17,9 +17,26 @@ namespace Poetry.iOS
 		public override void ViewDidLoad()
 		{
 
+			if (SelectedPoem != null)
+			{
+				PTitle.Text = SelectedPoem.Title;
+				PContent.Text = SelectedPoem.Content;
+				PDate.Text = "Created: " + SelectedPoem.DateCreated.ToShortDateString();
+				Author.Text = SelectedPoem.Author;
+				recorder.AudioFileName = SelectedPoem.AudioUrl;
+			}
 			
 			base.ViewDidLoad();
 
+			var tap = new UITapGestureRecognizer();
+			tap.AddTarget(() => View.EndEditing(true));
+			View.AddGestureRecognizer(tap);
+			tap.CancelsTouchesInView = false;
+
+
+			this.PDate.Text = "Created: " + DateTime.UtcNow.ToShortDateString();
+
+			recorder.AudioFileName = string.Format("{0}-{1}.aac", PTitle.Text.Trim(), DateTime.Now.ToString("yyyy-MMMMM-dd"));
 			Status.Text = recorder.Status;
 
 			Record.TouchUpInside += (sender, e) => {
@@ -35,35 +52,49 @@ namespace Poetry.iOS
 			};
 
 			Play.TouchUpInside += (sender, e) => {
-				recorder.PlayRecord();
+				if (SelectedPoem != null)
+				{
+					recorder.PlayRecord(SelectedPoem.AudioUrl);
+				}
+				else
+				{
+					recorder.PlayRecord(recorder.AudioFileName);
+				}
 			};
 
-			var tap = new UITapGestureRecognizer();
-			tap.AddTarget(() => View.EndEditing(true));
-			View.AddGestureRecognizer(tap);
-			tap.CancelsTouchesInView = false;
+			Remove.TouchUpInside += (sender, e) => {
+				if (SelectedPoem != null)
+				{
+					db.DeleteItem(SelectedPoem);
+				}
+			};
 
-			if (SelectedPoem != null)
-			{
-				PTitle.Text = SelectedPoem.Title;
-				PContent.Text = SelectedPoem.Content;
-				PDate.Text = "Created: " +SelectedPoem.DateCreated.ToShortDateString();
-				Author.Text = SelectedPoem.Author;
-			}
 
-			this.PDate.Text = "Created: " + DateTime.UtcNow.ToShortDateString();
 
 			Save.TouchUpInside += (sender, e) =>
 			{
-				db.SaveItem(new Poem()
+				if (SelectedPoem != null)
 				{
-					Title = PTitle.Text,
-					Content = PContent.Text,
-					Author = Author.Text,
-					DateCreated = DateTime.UtcNow,
-					AudioUrl = recorder.AudioFileName
-					                      
-				});
+					SelectedPoem.Title = PTitle.Text;
+					SelectedPoem.Content = PContent.Text;
+					SelectedPoem.Author = Author.Text;
+					SelectedPoem.DateCreated = DateTime.UtcNow;
+					SelectedPoem.AudioUrl = recorder.AudioFileName;
+					db.SaveItem(SelectedPoem);
+				}
+				else
+				{
+					db.SaveItem(new Poem()
+					{
+						Title = PTitle.Text,
+						Content = PContent.Text,
+						Author = Author.Text,
+						DateCreated = DateTime.UtcNow,
+						AudioUrl = recorder.AudioFileName
+
+
+					});
+				}
 			};
 		}
     }

@@ -60,13 +60,18 @@ namespace Poetry.iOS
 			});
 		}
 
-		public void PlayRecord()
+		public void PlayRecord(string Filename)
 		{
+			
+			string tempLocation = Path.Combine(DataSource.Root, Filename);
+			NSUrl FilePath = NSUrl.FromFilename(tempLocation);
+
 			AudioSession.Category = AudioSessionCategory.MediaPlayback;
 
-			this.player = new AVPlayer(this.audioFilePath);
+			this.player = new AVPlayer(FilePath);
 			this.player.Play();
 		}
+
 
 		bool PrepareAudioSession()
 		{
@@ -76,7 +81,7 @@ namespace Poetry.iOS
 			err = audioSession.SetActive(true);
 
 			//Set up the file storage settings for the audio file
-			AudioFileName = string.Format("MyPoem{0}.aac", DateTime.Now.ToString("yyyy-MMMMM-dd"));
+
 			string tempLocation = Path.Combine(Path.GetTempPath(), AudioFileName);
 			audioFilePath = NSUrl.FromFilename(tempLocation);
 
