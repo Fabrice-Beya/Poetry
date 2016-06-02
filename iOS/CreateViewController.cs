@@ -60,7 +60,9 @@ namespace Poetry.iOS
 					Title = PTitle.Text,
 					Content = PContent.Text,
 					Author = Author.Text,
-					DateCreated = DateTime.UtcNow
+					DateCreated = DateTime.UtcNow,
+					AudioUrl = recorder.AudioFileName
+					                      
 				});
 			};
 		}

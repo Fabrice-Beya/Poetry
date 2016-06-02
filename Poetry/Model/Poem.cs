@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Poetry
 {
 	public class Poem
@@ -10,6 +11,7 @@ namespace Poetry
 		public int Lines { get; set; }
 		public string Content { get; set; }
 		public string ImageUrl { get; set; }
+		public string AudioUrl { get; set; }
 		public string Font { get; set; }
 		public DateTime DateCreated { get; set; }
 	}

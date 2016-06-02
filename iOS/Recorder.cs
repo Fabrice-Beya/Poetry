@@ -18,6 +18,7 @@ namespace Poetry.iOS
 		NSObject observer;
 		public string Status { get; set; }
 		public string LengthRecorded { get; set; }
+		public string AudioFileName { get; set; }
 
 		public Recorder()
 		{
@@ -75,8 +76,8 @@ namespace Poetry.iOS
 			err = audioSession.SetActive(true);
 
 			//Set up the file storage settings for the audio file
-			string filename = string.Format("MyPoem{0}.aac", DateTime.Now.ToString("yyyy-MMMMM-dd"));
-			string tempLocation = Path.Combine(Path.GetTempPath(), filename);
+			AudioFileName = string.Format("MyPoem{0}.aac", DateTime.Now.ToString("yyyy-MMMMM-dd"));
+			string tempLocation = Path.Combine(Path.GetTempPath(), AudioFileName);
 			audioFilePath = NSUrl.FromFilename(tempLocation);
 
 			//set up the NSObject Array of values that will be combined with the keys to make the NSDictionary
