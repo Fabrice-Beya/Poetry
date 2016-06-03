@@ -3,7 +3,10 @@ using SQLite;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Poetry;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(PoetryDataSource))]
 namespace Poetry
 {
 	public class PoetryDataSource : IPoetryDataSource
