@@ -20,27 +20,26 @@
 						Padding="0,100,0,0">
 				<Button Grid.Row="0" x:Name="Compose" Text="New Poem"
 						FontFamily="BaskerVille" TextColor="#29592A"
-						FontSize="40" FontAttributes="Bold"/>
+						FontSize="40" FontAttributes="Bold"
+						BackgroundColor="Transparent"/>
 				<Button Grid.Row="1"  x:Name="Explore" Text="Explore"
 					FontFamily="BaskerVille" TextColor="#29592A"
-					FontSize="40" FontAttributes="Bold"/>
+					FontSize="40" FontAttributes="Bold"
+						BackgroundColor="Transparent"/>
 				<Button Grid.Row="2"  x:Name="Edit" Text="My Collection"
 					FontFamily="BaskerVille" TextColor="#29592A"
-					FontSize="40" FontAttributes="Bold"/>
+					FontSize="40" FontAttributes="Bold"
+						BackgroundColor="Transparent"/>
 				</Grid>
-
 
 			</StackLayout>
 			<StackLayout x:Name="footer" VerticalOptions="End" Padding="0,150,0,0">
 				<Button x:Name="About" Text="About Poetry"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="15" FontAttributes="Bold" 
-						/>
+						BackgroundColor="Transparent"/>
 			</StackLayout>
 
-		
-			
-			
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

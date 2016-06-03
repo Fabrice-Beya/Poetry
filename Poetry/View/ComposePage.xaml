@@ -1,5 +1,42 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Poetry.ComposePage">
 	<ContentPage.Content>
+		<StackLayout x:Name="MainLayout" BackgroundColor="#64CE66" >
+
+			<StackLayout Spacing ="15">
+				
+				<Entry x:Name="PTitle"
+						Placeholder="Title"
+						PlaceholderColor="#29592A"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="28" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						BackgroundColor="Transparent"/>
+				<Grid Orientation="Horizontal">
+				<Entry Grid.Column="0" x:Name="Author" Text="Author: "
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="17" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						BackgroundColor="Transparent"/>
+				<Label Grid.Column="1" x:Name="PDateCreated" Text ="12/01/2016"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="17" FontAttributes="Bold"
+						HorizontalOptions="Center"/>
+				</Grid>
+				<ScrollView>
+				<Editor x:Name="PContent" Text="This is example test"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="28" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						BackgroundColor="Transparent"
+						WidthRequest = "400"
+						HeightRequest="550"
+						
+						/>	
+				</ScrollView>
+
+			</StackLayout>
+
+			</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
