@@ -10,7 +10,10 @@ namespace Poetry
 		public App()
 		{
 			// The root page of your application
-			MainPage = new NavigationPage(new HomePage());
+			MainPage = new NavigationPage(new HomePage()) { 
+			BarBackgroundColor = Color.FromHex("64CE66"),
+				BarTextColor = Color.FromHex("29592A")
+			};
 		}
 
 		protected override void OnStart()

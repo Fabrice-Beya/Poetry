@@ -10,6 +10,7 @@ namespace Poetry
 		public HomePage()
 		{
 			InitializeComponent();
+			Title = "Main Menu";
 		}
 	}
 }
