@@ -10,7 +10,7 @@ namespace Poetry
 		public ComposePage()
 		{
 			InitializeComponent();
-			Title = "Compose";
+
 
 
 		}

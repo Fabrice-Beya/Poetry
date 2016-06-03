@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Poetry.ComposePage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Poetry.ComposePage">
 	<ContentPage.Content>
 		<StackLayout x:Name="MainLayout" BackgroundColor="#64CE66" >
 
@@ -12,19 +14,22 @@
 						FontSize="28" FontAttributes="Bold"
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"/>
-				<Grid Orientation="Horizontal">
-				<Entry Grid.Column="0" x:Name="Author" Text="Author: "
+				<Grid >
+				<Entry Grid.Column="0" x:Name="Author" 
+						Placeholder="Author Name"
+						PlaceholderColor="#29592A"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="17" FontAttributes="Bold"
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"
+						WidthRequest = "150"
 						/>
 				<Label Grid.Column="1" x:Name="PDateCreated" Text ="12/01/2016"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="17" FontAttributes="Bold"
 						HorizontalOptions="Center"/>
 				</Grid>
-				<ScrollView>
+				<ScrollView >
 				<Editor x:Name="PContent" Text="..."
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="28" FontAttributes="Bold"
@@ -34,8 +39,8 @@
 						HeightRequest="500"
 
 						/>	
-				</ScrollView>
-				<Grid Orientation="Horizontal">
+				</ScrollView >
+				<Grid >
 				<Button Grid.Column="0" x:Name="Save" Text="Save"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="30" FontAttributes="Bold"
