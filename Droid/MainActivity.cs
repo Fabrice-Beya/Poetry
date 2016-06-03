@@ -20,6 +20,8 @@ namespace Poetry.Droid
 
 			base.OnCreate(bundle);
 
+			PoetryDataSource.Root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 
 			LoadApplication(new App());

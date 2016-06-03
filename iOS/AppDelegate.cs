@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 
 using Foundation;
 using UIKit;
@@ -12,6 +13,8 @@ namespace Poetry.iOS
 	{
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
+
+			PoetryDataSource.Root = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 			global::Xamarin.Forms.Forms.Init();
 
 			LoadApplication(new App());
