@@ -11,6 +11,8 @@ namespace Poetry
 		{
 			InitializeComponent();
 			Title = "Compose";
+
+
 		}
 	}
 }

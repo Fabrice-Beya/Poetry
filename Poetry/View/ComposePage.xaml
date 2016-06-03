@@ -3,7 +3,7 @@
 	<ContentPage.Content>
 		<StackLayout x:Name="MainLayout" BackgroundColor="#64CE66" >
 
-			<StackLayout Spacing ="15">
+			<StackLayout Spacing ="15" Padding="0,10,0,0">
 				
 				<Entry x:Name="PTitle"
 						Placeholder="Title"
@@ -17,24 +17,36 @@
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="17" FontAttributes="Bold"
 						HorizontalOptions="Center"
-						BackgroundColor="Transparent"/>
+						BackgroundColor="Transparent"
+						/>
 				<Label Grid.Column="1" x:Name="PDateCreated" Text ="12/01/2016"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="17" FontAttributes="Bold"
 						HorizontalOptions="Center"/>
 				</Grid>
 				<ScrollView>
-				<Editor x:Name="PContent" Text="This is example test"
+				<Editor x:Name="PContent" Text="..."
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="28" FontAttributes="Bold"
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"
-						WidthRequest = "400"
-						HeightRequest="550"
-						
+						WidthRequest = "350"
+						HeightRequest="500"
+
 						/>	
 				</ScrollView>
-
+				<Grid Orientation="Horizontal">
+				<Button Grid.Column="0" x:Name="Save" Text="Save"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="30" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						BackgroundColor="Transparent"
+						/>
+				<Button Grid.Column="1" x:Name="Remove" Text ="Remove"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="30" FontAttributes="Bold"
+						HorizontalOptions="Center"/>
+				</Grid>
 			</StackLayout>
 
 			</StackLayout>
