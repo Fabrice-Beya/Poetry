@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.WindowsAzure.MobileServices;
 
 using Foundation;
 using UIKit;
@@ -15,8 +14,8 @@ namespace Poetry.iOS
 		{
 			// if you want to use a different Application Delegate class from "AppDelegate"
 			// you can specify it here.
-			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 			UIApplication.Main(args, null, "AppDelegate");
 		}
 	}
 }
+
