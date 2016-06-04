@@ -41,7 +41,7 @@
 
 				<Editor x:Name="PContent" 
 						FontFamily="BaskerVille" TextColor="#29592A"
-						FontSize="28" FontAttributes="Bold"
+						FontSize="20" FontAttributes="Bold"
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"
 						WidthRequest = "350"
@@ -65,7 +65,7 @@
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="18" FontAttributes="Bold"
 						HorizontalOptions="Center"/>
-				<Label Grid.Row="1" Grid.Column="1" x:Name="RTime" Text ="00:00:00:"
+				<Label Grid.Row="1" Grid.Column="1" x:Name="RTime" Text ="00:00:00"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="18" FontAttributes="Bold"
 						HorizontalOptions="Center"/>

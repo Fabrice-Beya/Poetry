@@ -11,7 +11,7 @@ using System.Diagnostics;
 [assembly: Dependency(typeof(Recorder))]
 namespace Poetry.iOS
 {
-	public class Recorder
+	public class Recorder:IRecorder
 	{
 		//declaire Audio class
 		AVAudioRecorder recorder;
