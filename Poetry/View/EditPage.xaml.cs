@@ -14,20 +14,22 @@ namespace Poetry
 			InitializeComponent();
 			BindingContext = viewModel = new EditViewModel(this);
 
+			PoemsListView.ItemSelected += (sender, e) =>
+			{
+				var poem = PoemsListView.SelectedItem as Poem;
+
+				viewModel.GoToCompose.Execute(poem);
+				PoemsListView.SelectedItem = null;
+
+			};
+
+
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
 
-			PoemsListView.ItemSelected += (sender, e) =>
-			{
-				var poem = PoemsListView.SelectedItem as Poem;
-
-				viewModel.GoToCompose.Execute(poem);
-				PoemsListView.SelectedItem = null;	
-
-			};
 
 		}
 	}

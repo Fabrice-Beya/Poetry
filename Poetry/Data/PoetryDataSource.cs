@@ -30,6 +30,11 @@ namespace Poetry
 			return Connection.Delete(poem);
 		}
 
+		public int DeleteAll()
+		{
+			return Connection.DeleteAll<Poem>();
+		}
+
 		public List<Poem> GetPoems()
 		{
 			

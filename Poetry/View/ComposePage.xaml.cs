@@ -15,6 +15,7 @@ namespace Poetry
 			viewModel = new ComposeViewModel();
 			viewModel.SelectedPoem = poem;
 			BindingContext = viewModel.SelectedPoem;
+			viewModel.db.DeleteAll();
 
 		}
 
