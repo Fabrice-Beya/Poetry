@@ -8,6 +8,7 @@ namespace Poetry
 		List<Poem> GetPoems();
 		int SavePoem(Poem poem);
 		int DeletePoem(Poem poem);
+		int DeleteAll();
 	}
 }
 

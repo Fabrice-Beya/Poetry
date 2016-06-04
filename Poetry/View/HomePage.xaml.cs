@@ -11,13 +11,8 @@ namespace Poetry
 		{
 			InitializeComponent();
 			Title = "Main Menu";
-		}
 
-		protected override void OnAppearing()
-		{
-			base.OnAppearing();
-
-			Compose.Clicked += (sender, e) => 
+			Compose.Clicked += (sender, e) =>
 			{
 				Navigation.PushAsync(new ComposePage(new Poem()));
 			};
@@ -29,6 +24,13 @@ namespace Poetry
 			{
 				Navigation.PushAsync(new EditPage());
 			};
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
+
 		}
 	}
 }

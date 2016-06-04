@@ -3,6 +3,7 @@ namespace Poetry
 {
 	public class ComposeViewModel : ViewModelBase
 	{
+		
 		public Poem SelectedPoem { get; set; }
 
 		public ComposeViewModel()

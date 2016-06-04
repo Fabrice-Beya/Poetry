@@ -15,16 +15,21 @@ namespace Poetry
 			viewModel = new ComposeViewModel();
 			viewModel.SelectedPoem = poem;
 			BindingContext = viewModel.SelectedPoem;
-			viewModel.db.DeleteAll();
+
 
 		}
 
 		protected override void OnAppearing()
 		{
-			BindingContext = viewModel.SelectedPoem;
+			
 
-			//this.PTitle.Text = viewModel.SelectedPoem.Title;
+
 			base.OnAppearing();
+
+			this.PTitle.Text = viewModel.SelectedPoem.Title;
+			this.PContent.Text = viewModel.SelectedPoem.Content;
+			this.Author.Text = viewModel.SelectedPoem.Author;
+			this.PDateCreated.Text = viewModel.SelectedPoem.DateCreated.ToString();
 
 			Save.Clicked += (sender, e) => 
 			{
