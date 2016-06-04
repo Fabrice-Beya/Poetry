@@ -38,7 +38,6 @@
     </Compile>
     <Compile Include="Model\Poem.cs" />
     <Compile Include="Data\PoetryDataSource.cs" />
-    <Compile Include="Data\IPoetryDataSource.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -56,6 +55,8 @@
       <DependentUpon>ExplorePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ExploreViewModel.cs" />
+    <Compile Include="Interface\IRecorder.cs" />
+    <Compile Include="Interface\IPoetryDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLitePCL.raw">
@@ -86,6 +87,7 @@
     <Folder Include="Service\" />
     <Folder Include="View\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="Interface\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">

@@ -45,19 +45,37 @@
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"
 						WidthRequest = "350"
-						HeightRequest="500" 
+						HeightRequest="450" 
 						Text="{Binding PContent}"/>
 						
 							
 				
-				<Grid >
-				<Button Grid.Column="0" x:Name="Save" Text="Save"
+				<Grid ColumnSpacing ="10" >
+				<Button Grid.Row="0" Grid.Column="0" x:Name="Record" Text="Record"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="18" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						BackgroundColor="Transparent"
+						/>
+				<Button Grid.Row="0" Grid.Column="1" x:Name="Play" Text ="Play"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="18" FontAttributes="Bold"
+						HorizontalOptions="Center"/>
+				<Button Grid.Row="0" Grid.Column="2" x:Name="Stop" Text ="Stop"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="18" FontAttributes="Bold"
+						HorizontalOptions="Center"/>
+				<Label Grid.Row="1" Grid.Column="1" x:Name="RTime" Text ="00:00:00:"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="18" FontAttributes="Bold"
+						HorizontalOptions="Center"/>
+				<Button Grid.Row="2" Grid.Column="0" x:Name="Save" Text="Save"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="30" FontAttributes="Bold"
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"
 						/>
-				<Button Grid.Column="1" x:Name="Remove" Text ="Remove"
+				<Button Grid.Row="2" Grid.Column="2" x:Name="Remove" Text ="Remove"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="30" FontAttributes="Bold"
 						HorizontalOptions="Center"/>
