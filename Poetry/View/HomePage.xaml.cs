@@ -19,7 +19,7 @@ namespace Poetry
 
 			Compose.Clicked += (sender, e) => 
 			{
-				Navigation.PushAsync(new ComposePage());
+				Navigation.PushAsync(new ComposePage(new Poem()));
 			};
 			Explore.Clicked += (sender, e) =>
 			{

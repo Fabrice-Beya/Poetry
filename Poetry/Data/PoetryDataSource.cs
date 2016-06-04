@@ -32,8 +32,10 @@ namespace Poetry
 
 		public List<Poem> GetPoems()
 		{
-			return (from i in Connection.Table<Poem>()
+			
+			var  test =  (from i in Connection.Table<Poem>()
 					select i).ToList();
+			return test;
 
 		}
 

@@ -9,6 +9,7 @@
 			<StackLayout Spacing ="15" Padding="0,10,0,0">
 				
 				<Entry x:Name="PTitle"
+						Text="{Binding PTitle}"
 						Placeholder="Title"
 						PlaceholderColor="#29592A"
 						FontFamily="BaskerVille" TextColor="#29592A"
@@ -18,31 +19,37 @@
 						WidthRequest = "250"
 						HorizontalTextAlignment="Center"/>
 				<Grid >
-				<Entry Grid.Column="0" x:Name="Author" 
+				<Entry Grid.Column="0" x:Name="Author"
+						Text="{Binding PAuthor}"
 						Placeholder="Author Name"
 						PlaceholderColor="#29592A"
+
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="17" FontAttributes="Bold"
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"
 						WidthRequest = "150"
 						/>
-				<Label Grid.Column="1" x:Name="PDateCreated" Text ="12/01/2016"
+
+				<Label Grid.Column="1" x:Name="PDateCreated"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="17" FontAttributes="Bold"
-						HorizontalOptions="Center"/>
+						HorizontalOptions="Center"
+						Text="{Binding DateCreated}"
+						/>
 				</Grid>
-				<ScrollView >
-				<Editor x:Name="PContent" Text="..."
+
+				<Editor x:Name="PContent" 
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="28" FontAttributes="Bold"
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"
 						WidthRequest = "350"
-						HeightRequest="500"
-
-						/>	
-				</ScrollView >
+						HeightRequest="500" 
+						Text="{Binding PContent}"/>
+						
+							
+				
 				<Grid >
 				<Button Grid.Column="0" x:Name="Save" Text="Save"
 						FontFamily="BaskerVille" TextColor="#29592A"
