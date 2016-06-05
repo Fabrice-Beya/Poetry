@@ -5,28 +5,22 @@ using Xamarin.Forms;
 
 namespace Poetry
 {
-	public partial class ComposePage : ContentPage
+	public partial class PoemViewPage : ContentPage
 	{
-		 ComposeViewModel viewModel;
-
-
-		public ComposePage(Poem poem)
+		PoemViewViewModel viewModel;
+		public PoemViewPage(Poem poem)
 		{
 			InitializeComponent();
 
-			viewModel = new ComposeViewModel(this);
+			viewModel = new PoemViewViewModel();
 
-			if(string.IsNullOrEmpty(poem.Id))
-				viewModel.SelectedPoem = poem;
+			viewModel.SelectedPoem = poem;
 			BindingContext = viewModel;
-
-
 		}
 
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-
 
 		}
 	}

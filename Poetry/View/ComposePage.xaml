@@ -50,7 +50,7 @@
 						
 							
 				
-				<Grid ColumnSpacing ="10" >
+				<Grid  ColumnSpacing ="10" >
 				<Button Grid.Row="0" Grid.Column="0" x:Name="Record" Text="Record"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="18" FontAttributes="Bold"
@@ -77,12 +77,19 @@
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"
 						Command="{Binding SavePoemCommand}"/>
+				<Button Grid.Row="2" Grid.Column="1" x:Name="Share" Text="Share"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="30" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						BackgroundColor="Transparent"
+						Command="{Binding SharePoemCommand}"/>
 				<Button Grid.Row="2" Grid.Column="2" x:Name="Remove" Text ="Remove"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="30" FontAttributes="Bold"
 						HorizontalOptions="Center"
 						Command="{Binding RemovePoemCommand}"/>
 				</Grid>
+
 			</StackLayout>
 
 			</StackLayout>

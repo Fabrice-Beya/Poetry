@@ -6,7 +6,10 @@ namespace Poetry
 {
 	public class Poem
 	{
-		
+		//temperary for the sqlite db
+		[PrimaryKey,AutoIncrement]
+		[Newtonsoft.Json.JsonProperty("PoemId")]
+		public int PoemId { get; set; }
 		[Newtonsoft.Json.JsonProperty("Id")]
 		public string Id { get; set; }
 		[Newtonsoft.Json.JsonProperty("Author")]

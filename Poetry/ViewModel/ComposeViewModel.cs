@@ -11,6 +11,8 @@ namespace Poetry
 	{
 		readonly internal IPoetryDataSource db;
 		AzureService AzureService;
+		ComposePage page;
+
 		Poem selectedPoem;
 		public Poem SelectedPoem
 		{
@@ -39,23 +41,31 @@ namespace Poetry
 
 		public IRecorder Recorder;
 
-		public ComposeViewModel()
+		public ComposeViewModel(ComposePage page)
 		{
-			selectedPoem = new Poem()
-			{
-				Content = ".....",
-				DateCreated = DateTime.Today,
-				AudioUrl = string.Format("{0}-{1}.aac", "Title", DateTime.Now.ToString("yyyy-MMMMM-dd"))
-			};
+			this.page = page;
+			InitializedBlankPoem();
 			AzureService = new AzureService();
 			db = DependencyService.Get<IPoetryDataSource>();
 			Recorder = DependencyService.Get<IRecorder>();
-			SetAudioFileName();
+
 
 		}
 
+		void InitializedBlankPoem()
+		{
+			selectedPoem = new Poem()
+			{
+				Title = "Your Title",
+				Author = "Your Author",
+				Content = "Your poem",
+				DateCreated = DateTime.Today,
+				AudioUrl = string.Format("{0}-{1}.aac", Title.Trim(), DateTime.Now.ToString("yyyy-MMMMM-dd"))
+			};
+		}
 		void SetAudioFileName()
 		{
+			this.selectedPoem.AudioUrl = string.Format("{0}-{1}.aac", Title.Trim(), DateTime.Now.ToString("yyyy-MMMMM-dd"));
 			Recorder.AudioFileName = this.SelectedPoem.AudioUrl;
 		}
 
@@ -75,8 +85,8 @@ namespace Poetry
 			{
 				IsBusy = true;
 
-			//	this.db.SavePoem(this.SelectedPoem);
-				await AzureService.SavePoem(selectedPoem);
+				this.db.SavePoem(this.SelectedPoem);
+
 			}
 			catch (Exception ex)
 			{
@@ -87,6 +97,36 @@ namespace Poetry
 				IsBusy = false;
 			}
 		}
+
+		ICommand sharePoemCommand;
+
+		public ICommand SharePoemCommand
+		{
+			get { return sharePoemCommand ?? (sharePoemCommand = new Command(async () => ExecuteSharePoemCommand())); }
+		}
+
+		async Task ExecuteSharePoemCommand()
+		{
+			if (IsBusy)
+				return;
+			try
+			{
+				IsBusy = true;
+
+				this.db.SavePoem(this.SelectedPoem);
+				await AzureService.SavePoem(selectedPoem);
+				await page.Navigation.PushAsync(new PoemViewPage(selectedPoem));
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("We have a problem fabrice: " + ex.ToString());
+			}
+			finally
+			{
+				IsBusy = false;
+			}
+		}
+
 
 		ICommand removePoemCommand;
 
@@ -130,6 +170,7 @@ namespace Poetry
 			try
 			{
 				IsBusy = true;
+				SetAudioFileName();
 				Recorder.StartRecording();
 				Watch = Recorder.stopwatch.ElapsedMilliseconds.ToString();
 			}

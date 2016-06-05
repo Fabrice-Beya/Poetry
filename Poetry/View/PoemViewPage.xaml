@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Poetry.PoemViewPage">
+	<ContentPage.Content>
+		<StackLayout x:Name="MainLayout" BackgroundColor="#64CE66" >
+
+			<StackLayout Spacing ="15" Padding="0,10,0,0">
+				
+				<Label x:Name="PTitle"
+						Text="{Binding SelectedPoem.Title}}"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="28" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						BackgroundColor="Transparent"
+						WidthRequest = "250"
+						HorizontalTextAlignment="Center"/>
+				<Grid >
+				<Label Grid.Row="0"  Grid.Column="0" x:Name="Author"
+						Text="{Binding SelectedPoem.Author, Mode=TwoWay}"
+				
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="17" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						BackgroundColor="Transparent"
+						WidthRequest = "150"
+						/>
+
+				<Label Grid.Row="0"  Grid.Column="1" x:Name="PDateCreated"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="17" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						Text="{Binding SelectedPoem.DateCreated, Mode=TwoWay}}"
+						/>
+				<Label Grid.Row="1" x:Name="TotalLikes"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="17" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						Text="{Binding SelectedPoem.Likes}}"
+						/>
+				</Grid>
+
+				<Label x:Name="PContent" 
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="20" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						BackgroundColor="Transparent"
+						WidthRequest = "350"
+						HeightRequest="450" 
+						Text="{Binding SelectedPoem.Content, Mode=TwoWay}}"/>
+						
+							
+				
+				<Grid x:Name="ViewModeView" ColumnSpacing ="10" Scale="1"
+						IsVisible= "{Binding IsViewMode}" 
+						IsEnabled= "{Binding IsViewMode}"
+						VerticalOptions="Start"
+						Padding="5">
+				<Button Grid.Row="0" Grid.Column="0" x:Name="Like" Text="Like"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="35" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						BackgroundColor="Transparent"
+						Command="{Binding LikedCommand}"/>
+				<Button Grid.Row="0" Grid.Column="1" x:Name="PlayPoem" Text ="Play"
+						FontFamily="BaskerVille" TextColor="#29592A"
+						FontSize="30" FontAttributes="Bold"
+						HorizontalOptions="Center"
+						Command="{Binding PlayCommand}"/>
+					</Grid>
+			</StackLayout>
+
+			</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

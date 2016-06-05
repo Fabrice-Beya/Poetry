@@ -58,6 +58,10 @@
     <Compile Include="Interface\IRecorder.cs" />
     <Compile Include="Interface\IPoetryDataSource.cs" />
     <Compile Include="Service\AzureService.cs" />
+    <Compile Include="View\PoemViewPage.xaml.cs">
+      <DependentUpon>PoemViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\PoemViewViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLitePCL.raw">
@@ -125,6 +129,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ExplorePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PoemViewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

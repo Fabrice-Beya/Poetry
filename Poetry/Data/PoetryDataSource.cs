@@ -16,7 +16,7 @@ namespace Poetry
 
 		public static string Root { get; set; }
 
-		const string filename = "poem1.db3";
+		const string filename = "poem3.db3";
 
 		public PoetryDataSource()
 		{
@@ -46,10 +46,9 @@ namespace Poetry
 
 		public void SavePoem(Poem poem)
 		{
-			if (string.IsNullOrEmpty(poem.Id))
+			if (poem.PoemId!=0)
 			{
 				Connection.Update(poem);
-
 			}
 
 			 Connection.Insert(poem);

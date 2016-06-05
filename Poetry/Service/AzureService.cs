@@ -89,7 +89,8 @@ namespace Poetry
 			//		Debug.WriteLine("We have a problem fabrie: " + ex.ToString());
 			//	}
 
-			}
+			//}
+
 			try
 			{
 				await poemsTable.InsertAsync(poem);
