@@ -57,6 +57,7 @@
     <Compile Include="ViewModel\ExploreViewModel.cs" />
     <Compile Include="Interface\IRecorder.cs" />
     <Compile Include="Interface\IPoetryDataSource.cs" />
+    <Compile Include="Service\AzureService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLitePCL.raw">
