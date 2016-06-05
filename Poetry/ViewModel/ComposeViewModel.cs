@@ -57,30 +57,6 @@ namespace Poetry
 			Recorder.AudioFileName = this.SelectedPoem.AudioUrl;
 		}
 
-		ICommand addPoemCommand;
-
-		public ICommand AddPoemCommand
-		{
-			get { return addPoemCommand ?? (addPoemCommand = new Command(async () => ExecuteAddPoemCommand())); }
-		}
-
-		async Task ExecuteAddPoemCommand()
-		{
-			if (IsBusy)
-				return;
-			try
-			{
-				IsBusy = true;
-			}
-			catch (Exception ex)
-			{
-
-			}
-			finally
-			{
-				IsBusy = false;
-			}
-		}
 
 		ICommand savePoemCommand;
 

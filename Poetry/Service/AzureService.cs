@@ -46,6 +46,17 @@ namespace Poetry
 			return await poemsTable.OrderBy(i => i.Likes).ToEnumerableAsync();
 		}
 
+		public async Task DeletePoem(Poem poem)
+		{
+			await Initialize();
+
+			await poemsTable.DeleteAsync(poem);
+
+			//sync the database local/cloud
+			await SyncPoems();
+
+		}
+
 		public async Task<Poem> SavePoem(Poem poem)
 		{
 			await Initialize();

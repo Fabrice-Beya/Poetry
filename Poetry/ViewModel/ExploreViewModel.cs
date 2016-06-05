@@ -10,9 +10,10 @@ namespace Poetry
 	public class ExploreViewModel:BaseViewModel
 	{
 		ObservableRangeCollection<Poem> Poems { get; } = new ObservableRangeCollection<Poem>();
-
+		AzureService AzureService;
 		public ExploreViewModel()
 		{
+			AzureService = new AzureService();
 		}
 
 		ICommand loadPoemsCommand;
@@ -29,7 +30,8 @@ namespace Poetry
 			try
 			{
 				IsBusy = true;
-
+				var poems = await AzureService.GetPoems();
+				Poems.ReplaceRange(poems);
 			}
 			catch (Exception ex)
 			{
