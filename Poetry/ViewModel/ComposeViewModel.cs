@@ -75,7 +75,7 @@ namespace Poetry
 			{
 				IsBusy = true;
 
-				this.db.SavePoem(this.SelectedPoem);
+			//	this.db.SavePoem(this.SelectedPoem);
 				await AzureService.SavePoem(selectedPoem);
 			}
 			catch (Exception ex)

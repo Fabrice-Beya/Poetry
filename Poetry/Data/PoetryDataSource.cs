@@ -16,7 +16,7 @@ namespace Poetry
 
 		public static string Root { get; set; }
 
-		const string filename = "poem.db3";
+		const string filename = "poem1.db3";
 
 		public PoetryDataSource()
 		{

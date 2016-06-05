@@ -7,20 +7,21 @@ namespace Poetry
 	public class Poem
 	{
 		
-		[Newtonsoft.Json.JsonProperty("id")]
+		[Newtonsoft.Json.JsonProperty("Id")]
 		public string Id { get; set; }
-		[Newtonsoft.Json.JsonProperty("author")]
+		[Newtonsoft.Json.JsonProperty("Author")]
 		public string Author { get; set; }
-		[Newtonsoft.Json.JsonProperty("title")]
+		[Newtonsoft.Json.JsonProperty("Title")]
 		public string Title { get; set; }
-		[Newtonsoft.Json.JsonProperty("content")]
+		[Newtonsoft.Json.JsonProperty("Content")]
 		public string Content { get; set; }
-		[Newtonsoft.Json.JsonProperty("audiourl")]
+		[Newtonsoft.Json.JsonProperty("Audiourl")]
 		public string AudioUrl { get; set; }
-		[Newtonsoft.Json.JsonProperty("likes")]
+		[Newtonsoft.Json.JsonProperty("Likes")]
 		public int Likes { get; set; }
-
+		[Newtonsoft.Json.JsonProperty("DateCreated")]
 		public DateTime DateCreated { get; set;}
+
 		[Microsoft.WindowsAzure.MobileServices.Version]
 		public string AzureVersion { get; set; }
 	}

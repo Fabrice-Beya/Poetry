@@ -4,6 +4,7 @@ using Microsoft.WindowsAzure.MobileServices.Sync;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Poetry
 {
@@ -18,20 +19,31 @@ namespace Poetry
 
 			if (IsInitialized)
 				return;
-			
-			//create our client
-			MobileService = new MobileServiceClient("http://spoken-poetry.azurewebsites.net");
+			try
+			{
+				//create our client
+				MobileService = new MobileServiceClient("http://spoken-poetry.azurewebsites.net");
 
-			//set up local sqlite db that will sync with cloud db initialize the table
-			const string path = "syncpoems.db";
-			var store = new MobileServiceSQLiteStore(path);
-			store.DefineTable<Poem>();
-			await MobileService.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
+				//set up local sqlite db that will sync with cloud db initialize the table
+				const string path = "syncpoem.db";
+				var store = new MobileServiceSQLiteStore(path);
+				store.DefineTable<Poem>();
+				await MobileService.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
 
-			//get our actual tables
-			poemsTable = MobileService.GetSyncTable<Poem>();
+				//get our actual tables
+				poemsTable = MobileService.GetSyncTable<Poem>();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("We have a problem fabrie: " + ex.ToString());
+			}
+			finally
+			{
+				IsInitialized = true;
+			}
 
-			IsInitialized = true;
+
+
 
 		}
 
@@ -62,19 +74,34 @@ namespace Poetry
 			await Initialize();
 
 			//check that peom is new else update it
-			if (string.IsNullOrEmpty(poem.Id))
-			{
-				await poemsTable.UpdateAsync(poem);
+			//if (string.IsNullOrEmpty(poem.Id))
+			//{
+			//	try
+			//	{
+			//		await poemsTable.UpdateAsync(poem);
 
-				//sync the database update
+			//		//sync the database update
+			//		await SyncPoems();
+			//		return poem;
+			//	}
+			//	catch (Exception ex)
+			//	{
+			//		Debug.WriteLine("We have a problem fabrie: " + ex.ToString());
+			//	}
+
+			}
+			try
+			{
+				await poemsTable.InsertAsync(poem);
+
+				//sync the database insert
 				await SyncPoems();
-				return poem;
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("We have a problem fabrie: " + ex.ToString());
 			}
 
-			await poemsTable.InsertAsync(poem);
-
-			//sync the database insert
-			await SyncPoems();
 
 			return poem;
 

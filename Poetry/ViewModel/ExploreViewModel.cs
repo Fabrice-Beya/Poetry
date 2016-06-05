@@ -4,12 +4,13 @@ using Xamarin.Forms;
 using System.Collections.Generic;
 using MvvmHelpers;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Poetry
 {
 	public class ExploreViewModel:BaseViewModel
 	{
-		ObservableRangeCollection<Poem> Poems { get; } = new ObservableRangeCollection<Poem>();
+		public ObservableRangeCollection<Poem> Poems { get; set; } = new ObservableRangeCollection<Poem>();
 		AzureService AzureService;
 		public ExploreViewModel()
 		{
