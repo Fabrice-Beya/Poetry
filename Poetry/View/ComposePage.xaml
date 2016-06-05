@@ -9,7 +9,7 @@
 			<StackLayout Spacing ="15" Padding="0,10,0,0">
 				
 				<Entry x:Name="PTitle"
-						Text="{Binding PTitle}"
+						Text="{Binding SelectedPoem.Title, Mode=TwoWay}}"
 						Placeholder="Title"
 						PlaceholderColor="#29592A"
 						FontFamily="BaskerVille" TextColor="#29592A"
@@ -20,7 +20,7 @@
 						HorizontalTextAlignment="Center"/>
 				<Grid >
 				<Entry Grid.Column="0" x:Name="Author"
-						Text="{Binding PAuthor}"
+						Text="{Binding SelectedPoem.Author, Mode=TwoWay}"
 						Placeholder="Author Name"
 						PlaceholderColor="#29592A"
 
@@ -35,7 +35,7 @@
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="17" FontAttributes="Bold"
 						HorizontalOptions="Center"
-						Text="{Binding DateCreated}"
+						Text="{Binding SelectedPoem.DateCreated, Mode=TwoWay}}"
 						/>
 				</Grid>
 
@@ -46,7 +46,7 @@
 						BackgroundColor="Transparent"
 						WidthRequest = "350"
 						HeightRequest="450" 
-						Text="{Binding PContent}"/>
+						Text="{Binding SelectedPoem.Content, Mode=TwoWay}}"/>
 						
 							
 				
@@ -56,16 +56,18 @@
 						FontSize="18" FontAttributes="Bold"
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"
-						/>
+						Command="{Binding RecordCommand}"/>
 				<Button Grid.Row="0" Grid.Column="1" x:Name="Play" Text ="Play"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="18" FontAttributes="Bold"
-						HorizontalOptions="Center"/>
+						HorizontalOptions="Center"
+						Command="{Binding PlayCommand}"/>
 				<Button Grid.Row="0" Grid.Column="2" x:Name="Stop" Text ="Stop"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="18" FontAttributes="Bold"
-						HorizontalOptions="Center"/>
-				<Label Grid.Row="1" Grid.Column="1" x:Name="RTime" Text ="00:00:00"
+						HorizontalOptions="Center"
+						Command="{Binding StopCommand}"/>
+				<Label Grid.Row="1" Grid.Column="1" x:Name="RTime" Text ="{Binding Watch, Mode=OneWay}"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="18" FontAttributes="Bold"
 						HorizontalOptions="Center"/>
@@ -74,11 +76,12 @@
 						FontSize="30" FontAttributes="Bold"
 						HorizontalOptions="Center"
 						BackgroundColor="Transparent"
-						/>
+						Command="{Binding SavePoemCommand}"/>
 				<Button Grid.Row="2" Grid.Column="2" x:Name="Remove" Text ="Remove"
 						FontFamily="BaskerVille" TextColor="#29592A"
 						FontSize="30" FontAttributes="Bold"
-						HorizontalOptions="Center"/>
+						HorizontalOptions="Center"
+						Command="{Binding RemovePoemCommand}"/>
 				</Grid>
 			</StackLayout>
 

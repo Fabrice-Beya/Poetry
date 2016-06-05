@@ -8,7 +8,9 @@
 				ItemsSource="{Binding Poems}" 
 				BackgroundColor="#64CE66"
 				SeparatorVisibility="None"
-				HasUnevenRows="true">
+				HasUnevenRows="true"
+				IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+				IsPullToRefreshEnabled="true">
 		<ListView.ItemTemplate>
 			<DataTemplate>
 				<ViewCell>

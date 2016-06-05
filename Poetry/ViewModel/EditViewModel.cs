@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using MvvmHelpers;
 
 namespace Poetry
 {
 	public class EditViewModel : ViewModelBase
 	{
 		ContentPage page;
-		public List<Poem> Poems
+		public List<Poem> Poems_local
 		{
 			get
 			{
@@ -17,9 +18,11 @@ namespace Poetry
 			}
 			set
 			{
-				Poems = value;
+				Poems_local = value;
 			}
 		}
+
+		ObservableRangeCollection<Poem> Poems { get; } = new ObservableRangeCollection<Poem>();
 
 		public EditViewModel(ContentPage page)
 		{
@@ -44,6 +47,33 @@ namespace Poetry
 
 			await page.Navigation.PushAsync(new ComposePage(poem));
 		}
+
+
+		ICommand loadPoemsCommand;
+
+		public ICommand LoadPoemsCommand
+		{
+			get { return loadPoemsCommand ?? (loadPoemsCommand = new Command(async () => ExecuteLoadPoemsCommand())); }
+		}
+
+		async Task ExecuteLoadPoemsCommand()
+		{
+			if (IsBusy)
+				return;
+			try
+			{
+				IsBusy = true;
+			}
+			catch (Exception ex)
+			{
+
+			}
+			finally
+			{
+				IsBusy = false;
+			}
+		}
 	}
+
 }
 
