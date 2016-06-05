@@ -15,7 +15,7 @@ namespace Poetry
 			InitializeComponent();
 
 			viewModel = new ComposeViewModel();
-			if(poem.Id!=0)
+			if(string.IsNullOrEmpty(poem.Id))
 				viewModel.SelectedPoem = poem;
 
 

@@ -3,13 +3,14 @@ using System.Windows.Input;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using MvvmHelpers;
+using System.Diagnostics;
 
 namespace Poetry
 {
 	public class ComposeViewModel : BaseViewModel
 	{
 		readonly internal IPoetryDataSource db;
-
+		AzureService AzureService;
 		Poem selectedPoem;
 		public Poem SelectedPoem
 		{
@@ -46,6 +47,7 @@ namespace Poetry
 				DateCreated = DateTime.Today,
 				AudioUrl = string.Format("{0}-{1}.aac", "Title", DateTime.Now.ToString("yyyy-MMMMM-dd"))
 			};
+			AzureService = new AzureService();
 			db = DependencyService.Get<IPoetryDataSource>();
 			Recorder = DependencyService.Get<IRecorder>();
 			SetAudioFileName();
@@ -74,10 +76,11 @@ namespace Poetry
 				IsBusy = true;
 
 				this.db.SavePoem(this.SelectedPoem);
+				await AzureService.SavePoem(selectedPoem);
 			}
 			catch (Exception ex)
 			{
-
+				Debug.WriteLine("We have a problem fabrie: " + ex.ToString()); 
 			}
 			finally
 			{
@@ -99,12 +102,13 @@ namespace Poetry
 			try
 			{
 				IsBusy = true;
-				if (this.SelectedPoem.Id != 0)
+				if (string.IsNullOrEmpty(SelectedPoem.Id))
+					await AzureService.DeletePoem(selectedPoem);
 					this.db.DeletePoem(this.SelectedPoem);
 			}
 			catch (Exception ex)
 			{
-
+				Debug.WriteLine("We have a problem fabrie: " + ex.ToString());
 			}
 			finally
 			{

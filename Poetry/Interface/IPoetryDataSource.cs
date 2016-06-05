@@ -6,7 +6,7 @@ namespace Poetry
 	public interface IPoetryDataSource
 	{
 		List<Poem> GetPoems();
-		int SavePoem(Poem poem);
+		void SavePoem(Poem poem);
 		int DeletePoem(Poem poem);
 		int DeleteAll();
 	}

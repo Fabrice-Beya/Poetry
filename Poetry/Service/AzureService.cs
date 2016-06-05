@@ -62,7 +62,7 @@ namespace Poetry
 			await Initialize();
 
 			//check that peom is new else update it
-			if (poem.Id != 0)
+			if (string.IsNullOrEmpty(poem.Id))
 			{
 				await poemsTable.UpdateAsync(poem);
 

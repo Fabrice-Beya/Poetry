@@ -6,9 +6,9 @@ namespace Poetry
 {
 	public class Poem
 	{
-		[PrimaryKey, AutoIncrement]
+		
 		[Newtonsoft.Json.JsonProperty("id")]
-		public int Id { get; set; }
+		public string Id { get; set; }
 		[Newtonsoft.Json.JsonProperty("author")]
 		public string Author { get; set; }
 		[Newtonsoft.Json.JsonProperty("title")]

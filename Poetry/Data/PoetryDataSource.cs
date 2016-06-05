@@ -44,15 +44,15 @@ namespace Poetry
 
 		}
 
-		public int SavePoem(Poem poem)
+		public void SavePoem(Poem poem)
 		{
-			if (poem.Id != 0)
+			if (string.IsNullOrEmpty(poem.Id))
 			{
 				Connection.Update(poem);
-				return poem.Id;
+
 			}
 
-			return Connection.Insert(poem);
+			 Connection.Insert(poem);
 		}
 
 	}
