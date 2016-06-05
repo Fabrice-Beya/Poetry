@@ -31,6 +31,7 @@ namespace Poetry
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
+			viewModel.LoadPoemsCommand.Execute(null);
 		}
 	}
 }

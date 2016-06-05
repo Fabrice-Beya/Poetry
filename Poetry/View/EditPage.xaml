@@ -5,12 +5,13 @@
 		Title ="My Collection">
 	<ContentPage.Content>
 	<ListView x:Name="PoemsListView"
-				ItemsSource="{Binding Poems}" 
+				ItemsSource="{Binding Poems_local}" 
 				BackgroundColor="#64CE66"
 				SeparatorVisibility="None"
 				HasUnevenRows="true"
 				IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-				IsPullToRefreshEnabled="true">
+				IsPullToRefreshEnabled="true"
+				RefreshCommand="{Binding LoadPoemsCommand}">
 		<ListView.ItemTemplate>
 			<DataTemplate>
 				<ViewCell>

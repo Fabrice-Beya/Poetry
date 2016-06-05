@@ -7,18 +7,21 @@ using MvvmHelpers;
 
 namespace Poetry
 {
-	public class EditViewModel : ViewModelBase
+	public class EditViewModel : BaseViewModel
 	{
 		ContentPage page;
+		readonly internal IPoetryDataSource db;
+
+		List<Poem> poems_local;
 		public List<Poem> Poems_local
 		{
 			get
 			{
-				return db.GetPoems();
+				return poems_local;
 			}
 			set
 			{
-				Poems_local = value;
+				SetProperty(ref poems_local, value);
 			}
 		}
 
@@ -27,6 +30,7 @@ namespace Poetry
 		public EditViewModel(ContentPage page)
 		{
 			this.page = page;
+			db = DependencyService.Get<IPoetryDataSource>();
 		}
 
 		Command<Poem> goToCompose;
@@ -63,6 +67,7 @@ namespace Poetry
 			try
 			{
 				IsBusy = true;
+				Poems_local = db.GetPoems();
 			}
 			catch (Exception ex)
 			{
