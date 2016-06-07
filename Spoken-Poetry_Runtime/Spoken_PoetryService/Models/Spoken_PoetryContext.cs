@@ -22,7 +22,8 @@ namespace Spoken_PoetryService.Models
         {
         } 
 
-        public DbSet<TodoItem> TodoItems { get; set; }
+       // public DbSet<TodoItem> TodoItems { get; set; }
+        public DbSet<Poem> TodoItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
