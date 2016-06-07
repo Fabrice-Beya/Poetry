@@ -53,15 +53,26 @@ namespace Spoken_PoetryService
     {
         protected override void Seed(Spoken_PoetryContext context)
         {
-            List<TodoItem> todoItems = new List<TodoItem>
+            //List<TodoItem> todoItems = new List<TodoItem>
+            //{
+            //    new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
+            //    new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
+            //};
+
+            List<Poem> poems = new List<Poem>
             {
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
+                new Poem { Id = Guid.NewGuid().ToString(), Title = "First Poem", Author = "Fabrice1" },
+                new Poem { Id = Guid.NewGuid().ToString(), Title = "Second Poem", Author = "Fabrice2" },
             };
 
-            foreach (TodoItem todoItem in todoItems)
+            //foreach (TodoItem todoItem in todoItems)
+            //{
+            //    context.Set<TodoItem>().Add(todoItem);
+            //}
+
+            foreach (Poem poem in poems)
             {
-                context.Set<TodoItem>().Add(todoItem);
+                context.Set<Poem>().Add(poem);
             }
 
             base.Seed(context);
